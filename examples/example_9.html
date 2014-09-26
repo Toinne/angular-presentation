@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular-route.min.js"></script>
+</head>
+<body>
+
+<div data-ng-view>
+    Loading ...
+</div>
+
+<script>
+    var myApp = angular.module('myApp',[
+        'ngRoute'
+    ]);
+
+    myApp.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/users', {
+            templateUrl: './views/users3.html',
+            controller: 'UsersController'
+        }).otherwise({
+            templateUrl: './views/errors.html'
+        });
+    }]);
+
+    myApp.controller('UsersController', ['$scope' , '$rootScope', function($scope, $rootScope) {
+        $rootScope.company = 'Engagor';
+
+        $scope.count = 0;
+        $scope.users = [
+            {
+                name : 'Anthony',
+                nickname : 'toinne or tony (depending on your circle)',
+                gender : 'male'
+            },
+            {
+                name : 'Ken',
+                nickname : 'broere',
+                gender : 'male'
+            },
+            {
+                name : 'Jeroen',
+                nickname : 'jerre',
+                gender : 'male'
+            },
+            {
+                name : 'Jurriaan',
+                nickname : 'oemambo',
+                gender : 'male'
+            },
+            {
+                name : 'Lien',
+                nickname : 'does she have a nickname ?',
+                gender : 'female'
+            }
+        ];
+        $scope.$watch('users', function (){
+            console.log('A change has occured')
+        },true);
+
+        $scope.$on('up', function(test) {
+            $scope.count++;
+        });
+    }]);
+</script>
+</body>
+</html>

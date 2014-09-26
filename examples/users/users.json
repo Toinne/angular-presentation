@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Anthony",
+        "nickname" : "toinne or tony (depending on your circle)",
+        "gender" : "male"
+    },
+    {
+        "name" : "Ken",
+        "nickname" : "broere",
+        "gender" : "male"
+    },
+    {
+        "name" : "Jeroen",
+        "nickname" : "jerre",
+        "gender" : "male"
+    },
+    {
+        "name" : "Jurriaan",
+        "nickname" : "oemambo",
+        "gender" : "male"
+    },
+    {
+        "name" : "Lien",
+        "nickname" : "does she have a nickname ?",
+        "gender" : "female"
+    }
+]

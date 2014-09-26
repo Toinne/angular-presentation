@@ -1,0 +1,13 @@
+<div data-ng-controller="UsersController">
+    <p>
+        Counter = {{count}}
+        <button ng-click="$broadcast('up')">$broadcast('up')</button>
+    </p>
+
+    <div data-ng-repeat="user in users" data-ng-show="user.gender === 'male'">
+        <h3>{{user.name | uppercase}}</h3>
+        <p>{{user.nickname}}</p>
+        Edit nickname:<br>
+        <textarea rows="5" cols="50" data-ng-model="user.nickname"></textarea>
+    </div>
+</div>

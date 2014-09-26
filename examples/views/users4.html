@@ -1,0 +1,16 @@
+<div data-ng-controller="UsersController">
+    <div data-ng-repeat="user in users" data-ng-show="user.gender === 'male'">
+        <h3>{{user.name | uppercase}}</h3>
+        <p>{{user.nickname}}</p>
+        Edit nickname:<br>
+        <textarea rows="5" cols="50" data-ng-model="user.nickname"></textarea>
+    </div>
+
+    <form ng-submit="addUsers()">
+        <input type="text" ng-model="name"  size="30" placeholder="name">
+        <input type="text" ng-model="nickname"  size="30" placeholder="nickname">
+        <input type="text" ng-model="gender"  size="30" placeholder="gender">
+
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+</div>
